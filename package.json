@@ -1,0 +1,26 @@
+{
+    "name": "scss-to-css",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@github.com:Anik7303/scss-to-css.git",
+    "author": "Anik7303 <anik7303@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "scss:watch": "node-sass scss/styles.scss css/main.css --watch",
+        "css:compile": "node-sass scss/styles.scss css/main.comp.css",
+        "css:compress": "postcss css/main.comp.css -o css/main.css",
+        "css:prefix": "postcss css/main.comp.css --output css/main.prefix.css --env development",
+        "css:build": "run-s css:compile css:compress",
+        "dev:serve": "live-server",
+        "dev": "run-p dev:serve scss:watch"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.2.5",
+        "cssnano": "^5.0.3",
+        "live-server": "^1.2.1",
+        "node-sass": "^6.0.0",
+        "npm-run-all": "^4.1.5",
+        "postcss": "^8.2.15",
+        "postcss-cli": "^8.3.1"
+    }
+}
